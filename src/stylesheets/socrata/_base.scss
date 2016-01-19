@@ -1,0 +1,236 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  BASE STYLES
+  Overrides on base.css
+
+  -   Sets up generic site structure
+  -   Modifies box-sizing
+  -   Provides for responsive layout
+  -   Sets up default element behaviors
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// THEME COLORS
+// Modify according to your client's requirements!
+$background-color:      #f7f7f7     !default;
+$body-text-color:       #5f5f5f     !default;
+$accent-color:          #8dd7f7     !default;
+$link-color:            #3b5998     !default;
+
+$link-hover-color:      lighten($link-color, 10%) !default;
+$link-active-color:     lighten($link-color, 15%) !default;
+$link-visited-color:    $link-color !default;
+
+// LAYOUT POSITIONING
+// In most cases, these will not need to change!
+$site-side-padding:     40px        !default;
+$tile-margin:           20px        !default;
+$column-margin:         20px        !default;
+$border-radius:         0           !default;
+
+
+html, body {
+  background: $background-color;
+  color: $body-text-color;
+  overflow-x: hidden;    // Test
+  height: auto;          // Test
+}
+
+body {
+  // Placeholder for styles pertaining to these
+  // special home or app-page specific body classes
+  &.controller_custom_content {
+    // Override box-sizing for home page
+    * {
+      box-sizing: border-box;
+    }
+
+    .siteContentWrapper {
+      padding: 0 !important;    // Overrides base padding
+      // !important overrides a 2em padding that seems to be applied in IE9
+      // Name space to controller_custom_content because we want that 2em
+      // on platform-only pages
+    }
+  }
+}
+
+header, footer, #header, #footer {
+  // Override box-sizing for custom headers/footers
+  * {
+    box-sizing: border-box;
+  }
+}
+
+// General site structure
+.siteOuterWrapper {
+  min-width: 0 !important;   // Overrides non-responsive base default width.
+  min-height: 0 !important;
+  margin: 0;
+}
+
+.siteInnerWrapper {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+#siteFooter {
+  height: auto !important;  // Overrides base.css height to be dependent on content
+  margin-top: 0 !important; // Overrides a strange negative margin-top on base.css
+  clear: both;
+}
+
+// Flexbox for full-page-height stuff
+// Do not use flexbox on dataset view pages; it may break rendering of charts.
+// See https://socrata.atlassian.net/browse/CORE-2891
+body:not([class*='action_datasets_']) {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .siteOuterWrapper {
+    // Flexbox for full-page-height stuff
+    // Note that the second 0 is required for IE10/11 compatibility
+    flex: 1 0 auto;
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  CONTAINER
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// This is our own width control container.
+// In addition, alias it to .siteContentWrapper on non-custom pages.
+.container,
+body:not(.controller_custom_content) .siteContentWrapper {
+  position: relative;
+  max-width: $site-max-width-mobile;
+  margin: 0 auto;
+  padding-bottom: 0;         // Overrides base padding
+
+  // Adds side margins at higher screen widths only.
+  @media #{$medium} {
+    max-width: $site-max-width;
+    padding: 0 $site-side-padding;
+  }
+}
+
+// Do not allow our .container styles to affect a collision in the /analytics page
+#analyticsDataContainer .container {
+  max-width: none;
+  padding: 0;
+}
+
+body:not(.controller_custom_content) .siteContentWrapper {
+  padding: $column-margin $site-side-padding;
+  box-sizing: border-box;    // Keeps this container at the same size as layout
+}
+
+// Container for small header and grid view takes up the full width of the page
+body.layout-small-header,
+body[class*='action_datasets_'] {
+  // Use entire screen width for dataset
+  .container {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+// Row structure
+.row {
+  position: relative;
+  margin: 0 12px;
+  &.full-bleed {
+    margin: 0;
+  }
+}
+
+// TODO: RESPONSIVE GRID!
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  STANDARD BEHAVIOR FOR HTML ELEMENTS
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+h1, h2, h3, h4, h5, h6 {
+  // Prevent links inside headers from taking on link styles.
+  a {
+    color: inherit !important;
+    text-decoration: none;
+  }
+}
+
+// Sets default link colors
+// Overrides base.css which is obscuring links by making them black
+a {
+  color: $link-color;
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:active {
+    color: $link-active-color;
+  }
+  &:visited {
+    color: $link-visited-color;
+  }
+}
+
+// Links are not underlined unless hovered
+// Fixes a bug in base.css where hovered links are not underlined
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Override base.css font styles
+p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// A box shadow appears on linked images
+a:focus img,
+a:active img {
+  box-shadow: none;
+  // TODO: Verify prefixed versions are not needed to override
+  //-webkit-box-shadow: none;
+  //-moz-box-shadow: none;
+  //-ms-box-shadow: none;
+  //-o-box-shadow: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  DATASET VIEW OVERRIDES
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// Search box
+// Todo: should be added to browse-control.css
+.browseSection .searchSection .searchBox {
+  background: transparent;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  COMPONENT OVERRIDES
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.socrata-component {
+  min-height: 0;             // Overrides base
+}
+
+.component-Text {
+  padding: 0;                // Overrides components.css
+  font-size: inherit;
+}
+
+// Override a rule in base.css that inexplicably sets Pika icons to subscript alignment
+.ss-icon, [class^="ss-"]:before, [class*=" ss-"]:before, [class^="ss-"]:after, [class*=" ss-"]:after {
+  vertical-align: baseline;
+}

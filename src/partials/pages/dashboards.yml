@@ -1,0 +1,11 @@
+status: published
+name: {{{name}}}
+path: /dashboards/{{{url}}}
+data:
+content:
+  type: Container
+  id: socrata-root
+  bodyClass: govstat-dashboard
+  children:
+    - type: GovStatDashboard
+      dashboardId: {{{dashboard_id}}}

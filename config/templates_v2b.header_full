@@ -1,0 +1,50 @@
+<header>
+  <div class="container">
+    <div class="row">
+
+      <div class="header-title">
+        <a href="/en/">
+          <img class="header-logo" src="/api/assets/812DA199-CFFE-47FE-90D1-1DB5BDFBE17B?site-title.png">
+        </a>
+      </div>
+
+      <div class="header-links">
+        <ul class="site-user-nav">
+          {{account_link}}{{admin_link}}{{sign_up_link}}{{sign_in_link}}{{sign_out_link}}
+        </ul>
+        <ul class="social-nav">
+            <li><a href="http://www.youtube.com/socrata"><i class="fa fa-fw fa-facebook"></i></a></li>
+            <li><a href="http://twitter.com/socrata"><i class="fa fa-fw fa-twitter"></i></a></li>
+        </ul>
+      </div>
+
+      <div id="header-toggle" class="header-toggle">
+        <span class="hamburger ss-icon ss-rows"></span>
+      </div>
+
+      <div id="search" class="search-container">
+        <form action="/en/browse" method="get">
+        <input id="search-input" type="text" name="q" placeholder="Search">
+          <button type="submit" class="search-button" value="">
+            <span class="search-icon ss-icon">&#x1F50E;</span>
+            <span class="search-button-text visuallyhidden">Search</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="nav-banner">
+    <div class="container">
+      <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/browse">Catalog</a></li>
+          <li><a href="/videos">Tutorial</a></li>
+          <li><a href="/videos">User&#8217;s guide</a></li>
+          <li><a href="http://dev.socrata.com/">Developer</a></li>
+      </ul>
+    </div>
+  </nav>
+
+</header>

@@ -1,0 +1,20 @@
+<footer class="clearfix">
+  <div class="container">
+
+    <div class="site-footer-logo">
+      <a href="/"><img class="footer-logo" src="{{{footer_logo}}}"></a>
+    </div>
+
+    <ul class="site-footer-nav">
+      {{#footer_links}}
+        <li><a href="{{{url}}}" rel="nofollow">{{text}}</a></li>
+      {{/footer_links}}
+    </ul>
+
+    <div class="site-footer-copyright">
+      <div class="copyright">{{{footer_copyright}}}</div>
+      <div class="socrata-logo">{{{powered_by_socrata}}}</div>
+    </div>
+
+  </div>
+</footer>

@@ -1,0 +1,49 @@
+<header>
+  <div class="container">
+    <div class="row">
+
+      <div class="header-title">
+        <a href="{{{root}}}">
+          <img class="header-logo" src="{{{header_logo}}}">
+        </a>
+      </div>
+
+      <div class="header-links">
+        <ul class="site-user-nav">
+          {{site_user_nav}}
+        </ul>
+        <ul class="social-nav">
+          {{#social_nav}}
+            <li><a href="{{{url}}}"><i class="{{{icon_class}}}"></i></a></li>
+          {{/social_nav}}
+        </ul>
+      </div>
+
+      <div id="header-toggle" class="header-toggle">
+        <span class="hamburger ss-icon ss-rows"></span>
+      </div>
+
+      <div id="search" class="search-container">
+        <form action="{{{root}}}browse" method="get">
+        <input id="search-input" type="text" name="q" placeholder="{{{search}}}">
+          <button type="submit" class="search-button" value="">
+            <span class="search-icon ss-icon">&#x1F50E;</span>
+            <span class="search-button-text visuallyhidden">{{{search}}}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="nav-banner">
+    <div class="container">
+      <ul class="nav-links">
+        {{#nav_links}}
+          <li><a href="{{{url}}}">{{text}}</a></li>
+        {{/nav_links}}
+      </ul>
+    </div>
+  </nav>
+
+</header>

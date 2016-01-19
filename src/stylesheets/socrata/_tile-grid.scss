@@ -1,0 +1,96 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  TILE GRID
+
+  Very basic scaffolding for tiled content.
+  When the the presentation of content is intended to
+  appear in tiles, use the .tile-grid class on a
+  DataSlate Repeater component. This ensures that
+  tiles stack up across columns correctly for different
+  media widths, and have the proper margins and spacing
+  within the site container. Set the number of
+  columns as necessary for each media query width.
+
+  // TODO Allow tile grid columns to be set
+  //      on a per-component basis. Currently these
+  //      variables will affect the entire layout.
+
+  // EXPERIMENTAL This may be possible if the component
+  //              uses @include tile-width(x) in its
+  //              definition. Test this to ensure that
+  //              inheritance rules are working.
+
+  Do not use the .tile-grid class to affect the
+  content of tiles. These will be targeted through
+  other classes elsewhere.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+$tile-grid-columns-tiny:     1      !default;
+$tile-grid-columns-small:    2      !default;
+$tile-grid-columns-med:      4      !default;
+$tile-grid-columns-large:    4      !default;
+$tile-grid-height:           165px  !default;
+$tile-grid-margin:           20px   !default;
+
+// Mixin to calculate tile widths given a number of columns
+@mixin tile-grid-columns($columns) {
+  .tile {
+    @if $columns > 1 {
+      width: calc(#{100% / $columns} - #{$tile-grid-margin * ($columns - 1) / $columns});
+    } @else {
+      // If columns = 1, this creates a rule that outputs calc(100% - 0), which
+      // will break as it's not a valid CSS value. This is because a calc() with a
+      // unitless zero is meaningless. Therefore, force this output to be 100%
+      width: 100%;
+    }
+  }
+
+  // Set the number of tiles per row depending on screen width
+  // Relies on the nth position of DataSlate's Repeater component .id-clone element
+  @if $columns > 1 {
+    .id-clone .tile {
+      margin-right: $tile-grid-margin;
+    }
+    .id-clone:nth-of-type(#{$columns}n) .tile {
+      margin-right: 0;
+    }
+  } @else {
+    .id-clone .tile {
+      margin-right: $tile-grid-margin;
+    }
+  }
+}
+
+.tile-grid {
+
+  .tile {
+    position: relative;
+    float: left;
+    height: $tile-grid-height;
+    overflow: hidden;
+
+    // Default margins
+    margin-right: $tile-margin;
+    margin-bottom: $tile-margin;
+
+    .tile-label {
+      padding: 0 10px;
+    }
+  }
+
+  // Tile widths & margins, according to column
+  @media #{$tiny-only} {
+    @include tile-grid-columns($tile-grid-columns-tiny);
+    margin-bottom: 0;
+  }
+  @media #{$small-only} {
+    @include tile-grid-columns($tile-grid-columns-small);
+  }
+  @media #{$medium-only} {
+    @include tile-grid-columns($tile-grid-columns-med);
+  }
+  @media #{$large-up} {
+    @include tile-grid-columns($tile-grid-columns-large);
+  }
+}

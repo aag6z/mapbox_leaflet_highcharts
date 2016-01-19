@@ -1,0 +1,111 @@
+name: |
+  {
+    "en": "Rally - Open Data Portal"
+  }
+path: /
+status: published
+data:
+  # Wallpaper section
+  # NOTE:
+  # Define wallpaper data context both as type dataset and row.
+  # This works around a DataSlate but where it is unable to
+  # parse a {dataset.id} reference when the context is a row.
+  # See https://socrata.atlassian.net/browse/ONCALL-1288
+  wallpaper_dataset:
+    datasetId: {{{wallpaper_banner}}}
+    type: dataset
+  wallpaper_row:
+    contextId: wallpaper_dataset
+    type: row
+  # Category list
+  categories:
+    datasetId: {{{category_tiles}}}
+    type: dataset
+  featured:
+    datasetId: {{{featured_stories}}}
+    type: dataset
+content:
+  id: content
+  type: Container
+  bodyClass: home
+  # global substitution helpers
+  substitutionHelpers:
+    # use these together to modify relative paths from root, such as /browse, to prepend locale if necessary
+    # sample usage: <a href="{env.current_locale !default_locale !add_slash ||}/browse">Browse</a>
+    expressions:
+      # for default locale, do not prepend the locale path
+      default_locale: /en//
+      # add an extra slash in path if adding a locale path
+      add_slash: /(.+)/\/$1/
+  children:
+  - type: Container
+    contextId:
+    - wallpaper_dataset
+    - wallpaper_row
+    id: home-wallpaper
+    htmlClass: wallpaper
+    children:
+    - type: Text
+      substitutionHelpers:
+        phrases:
+          title:
+            en: '{row.title_en}'
+          description:
+            en: '{row.description_en}'
+      html: |
+        <div class='wallpaper-image' style='background-image: url(/views/{wallpaper_dataset.dataset.id}/files/{wallpaper_row.row.image});'>
+          <div class='container'>
+            <div class='wallpaper-content'>
+              <h1>{#title ||Welcome to Socrata}</h1>
+              <p>{#description ||}</p>
+            </div>
+          </div>
+        </div>
+  - type: Container
+    id: main
+    htmlClass: container
+    children:
+    - type: Repeater
+      contextId: categories
+      id: category-tiles
+      htmlClass: tile-grid category-tiles row full-bleed clearfix
+      children:
+      - type: Text
+        substitutionHelpers:
+          phrases:
+            title:
+              en: '{title_en}'
+            description:
+              en: '{description_en}'
+        # {link} is not localized - assuming they are always relative paths
+        html: |
+          <div class='tile'>
+            <div class='tile-label'>
+              <div class='tile-icon ss-icon'>{icon ||layers}</div>
+              <div class='tile-title'>{#title ||}</div>
+            </div>
+            <a href='{env.current_locale !default_locale !add_slash ||}{link ||/browse}'>
+              <div class='tile-description'>
+                <p>{#description ||}</p>
+              </div>
+            </a>
+          </div>
+    - type: Repeater
+      contextId: featured
+      id: featured-stories
+      htmlClass: tile-grid featured-tiles row full-bleed clearfix
+      children:
+      - type: Text
+        substitutionHelpers:
+          phrases:
+            title:
+              en: '{title_en}'
+            description:
+              en: '{description_en}'
+        # {link} is not localized - assuming they are always relative paths
+        html: |
+          <div class='tile'>
+            <div class='tile-image' style='background-image:url(/views/{featured.dataset.id}/files/{image});'><a href='{env.current_locale !default_locale !add_slash ||}{link ||/browse}'></a></div>
+            <h4 class='tile-title'><a href='{env.current_locale !default_locale !add_slash ||}{link ||/browse}'>{#title}</a></h4>
+            <div class='tile-description'>{#description}</div>
+          </div>

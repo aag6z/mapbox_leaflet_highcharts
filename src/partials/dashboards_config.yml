@@ -1,0 +1,12 @@
+dashboard1:
+  name: Public Safety
+  url: public-safety
+  dashboard_id: xxxx-xxxx
+dashboard2:
+  name: Finance
+  url: finance
+  dashboard_id: xxxx-xxxx
+dashboard3:
+  name: Environment
+  url: environment
+  dashboard_id: xxxx-xxxx

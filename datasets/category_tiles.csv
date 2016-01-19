@@ -1,0 +1,9 @@
+order,title_en,title_es,description_en,description_es,icon,link
+1,Catalog,Conjunto de Datos,Acces to the data set provided by the Town Hall of Rubí,Acceso al conjunto de datos facilitados por el Ayuntamiento de Rubí,&#xE543;,/browse
+2,Maps,Mapas,Acces to data set visualized as a map,Acceso a la visualización de los datos en formato de mapa,&#xE6D0;,/browse
+3,Visualizations,Gráficos,Acces to data set visualized as a graphic,Acceso a la visualización de los datos en formato de gráfica,&#x1F4CA;,/browse
+4,Community Vision,Visión Ciudadana,Acces to the citizen’s interpretation of the dataset,Acceso a la interpretación de los datos hechos por la ciutadania,&#xEB82;,/browse
+5,Finances,Finanzas,Acces to the municipal finance data set,Acceso al conjunto de datos relativo a las finanzas municipales,&#x1F4B0;,/browse
+6,Activities,Actividades,Acces to the economic activities data set,Acceso al conjunto de datos relativo a las actividades económicas en el municipio. ,&#xF410;,/browse
+7,Population,Población,Acces to population and demography data set of Rubí,Acceso al conjunto de datos relativo a la población y demografía de Rubí ,&#xE400;,/browse
+8,Environment,Medioambiente,Acces to different environment aspects data set,Acceso al conjunto de datos relativo a diversos aspectos medioambientales,&#x1F332;,/browse

@@ -1,0 +1,93 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  LAYOUT / MISCELLANEOUS STYLES
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// For styles on elements, it's a good idea to namespace
+// them to the controller_custom_content class so that they
+// don't override styles on the Socrata platform UI
+
+body.controller_custom_content {
+  h1 {
+    font-size: 48px;
+    font-weight: 200;
+    color: $accent-color;
+    margin: 0.33em 0;
+    @media #{$mobile-override} {
+      font-size: 40px;
+    }
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: 200;
+    color: darken($accent-color, 10%);
+    @media #{$mobile-override} {
+      font-size: 32px;
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  TEMPLATE STYLES
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+body.home {
+  #main {
+    margin-top: 20px;
+  }
+}
+
+// Tile grid at tiny
+@media #{$tiny} {
+  body.home #main {
+    margin-top: 0;
+  }
+  .tile-grid {
+    margin-bottom: 20px !important;
+    .tile {
+      margin-bottom: 0;
+      border-top: 1px solid rgba(0,0,0,0.10);
+    }
+  }
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  CATEGORY PAGE STYLES
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.category-content {
+  margin-top: $column-margin;
+  margin-bottom: $column-margin !important; // Overrides .socrata-component:last-child of components.css
+
+  .category-header {
+    h1 {
+      margin-top: 0;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.4em;
+    }
+  }
+
+  .catalog-container {
+    margin-top: 20px;
+  }
+}
+
+// Catalog frame for category page
+.catalog-frame iframe {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background-color: white;
+
+  // Set the height of the iframe to something taller
+  min-height: 1000px;
+  height: auto !important;
+}

@@ -1,0 +1,133 @@
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  SEARCH
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+$search-border-color:      #cacaca              !default;
+$search-border-radius:     3px                  !default;
+$search-button-color:      #e3e3e3              !default;
+$search-icon-color:        $body-text-color     !default;
+$search-divider:           $nav-link-divider    !default;
+
+$search-hide-on-small-header:  true             !default;
+
+// If a search container is added to the header
+.search-container {
+  position: absolute;
+  right: 0;
+  // bottom: 0;
+  top: 45px;       // bottom:0 will make it move when menu slides down, so keep it anchored to top
+  font-size: 16px; // Set this specifically to keep sizing okay
+
+  @media #{$tiny} {
+    position: relative;
+    text-align: left;
+    margin-top: 10px;
+    top: 0;
+  }
+
+  form {
+    height: 100%;
+    vertical-align: top; // IE11 compatibility
+
+    input[type=text] {
+      // This seemingly unnecessary amount of specificity on this
+      // element is to override a number of very specific input
+      // styles from base.css and internal.css
+      line-height: 20px;
+
+      font-size: inherit;
+      width: 100px;
+      height: 32px;
+
+      padding: 4px;
+      border: 1px solid $search-border-color;
+      border-top-left-radius: $search-border-radius;
+      border-bottom-left-radius: $search-border-radius;
+      outline: none;
+
+      @media #{$tiny} {
+        width: 100%;
+        border-radius: $search-border-radius;
+        padding-right: 54px;
+      }
+      @media #{$medium} {
+        width: 175px;
+      }
+      @media #{$large} {
+        width: 250px;
+      }
+    }
+  }
+
+  button.search-button {
+    border: 1px solid $search-border-color;
+    border-left: none;
+    border-top-right-radius: $search-border-radius;
+    border-bottom-right-radius: $search-border-radius;
+    background-color: $search-button-color;
+    color: $search-icon-color;
+    user-select: none;
+
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    margin-left: -4px;
+    width: 48px;
+    height: 32px;
+
+    padding: 0px 6px 3px 6px; // overcomes different vendor defaults, fixes 1-2px off problem
+
+    @media #{$tiny} {
+      position: absolute;
+      top: 0; // Align button on top of search field
+      right: 0;
+    }
+
+    &:hover {
+      background-color: lighten($search-button-color, 5%);
+    }
+  }
+  .search-icon {
+    top: 3px;
+    position: relative;
+  }
+  .search-text {
+
+  }
+
+  // If search container is inside a nav banner...
+  .nav-banner & {
+
+    right: $site-side-padding;
+    top: 0;
+
+    // Some breathing room.
+    form {
+      margin: 8px 0;
+    }
+
+    // Add a divider line.
+    @media #{$tiny} {
+      border-top: $search-divider;
+    }
+  }
+
+  // If search container is on a grid view
+  body.layout-small-header &,
+  body[class*='action_datasets_'] & {
+    right: 0;
+  }
+}
+
+// If setting is true, do not display search container on grid view and small headers.
+@if $search-hide-on-small-header {
+  body.layout-small-header,
+  body[class*='action_datasets_'] {
+    .search-container {
+      display: none;
+    }
+  }
+}

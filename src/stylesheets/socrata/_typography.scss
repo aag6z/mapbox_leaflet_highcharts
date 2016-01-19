@@ -1,0 +1,38 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  TYPOGRAPHY
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// Set default typeface for the site.
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+* {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+// Preference: Set up external icon fonts to work
+// according to their original documentation.
+
+// SS PIKA
+// Documentation: http://styleguide.thenextweb.com/ss-pika/documentation.html
+
+// NOTE: Edit the original ss-pika to remove the @font-face
+// declaration - DataSlate is already providing access to
+// the font by default.
+@import 'vendor/ss-pika.css';
+
+// Only import the use of the .ss-icon class for Pika
+.pika, .ss-icon, .ss-icon.ss-pika,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-pika:before, [class*=" ss-"].ss-pika:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-pika.right:after, [class*=" ss-"].ss-pika.right:after {
+  font-family: 'SSPika';
+}
+
+// FONT AWESOME
+// No longer imported here.
+// It is now referenced via CDN by injecting its code within the document <head>.
+// See here: http://fortawesome.github.io/Font-Awesome/get-started/

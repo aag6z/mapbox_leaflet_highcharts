@@ -1,0 +1,103 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  NAVIGATION (BANNER STYLE)
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+$nav-background-color:            $accent-color     !default;
+
+$nav-border-radius:               $border-radius    !default;
+
+$nav-link-color:                  white             !default;
+$nav-link-hover-color:            $nav-link-color   !default;
+$nav-link-hover-background-color: lighten($nav-background-color, 5%)  !default;
+$nav-link-divider:                1px solid rgba(0,0,0,0.08)          !default;
+
+$nav-margin-top:                  20px              !default;
+$nav-margin-bottom:               0                 !default;
+
+$nav-search-border-radius:        3px               !default;
+$nav-search-button-color:         #e3e3e3           !default;
+$nav-search-icon-color:           $accent-color     !default;
+
+// TODO: Variabilize font size and calculate appropriate padding
+
+nav, #nav {
+  position: relative;
+
+  &.nav-banner {
+    margin-top: $nav-margin-top;
+    margin-bottom: $nav-margin-bottom;
+    border-radius: $nav-border-radius;
+    background-color: $nav-background-color;
+    overflow: hidden;
+
+    // Hard-code base font size so that form inputs look pretty okay
+    // TODO: Verify if this is still needed for form inputs (search?)
+    font-size: 14px;
+
+    // Ensure that this banner uses box-sizing: border-box;
+    * {
+      box-sizing: border-box;
+    }
+
+    @media #{$tiny} {
+      // Margins around the nav exist only on non-tiny screens
+      margin-top: 10px;
+      margin-bottom: 0;
+
+      .container {
+        margin: 0;
+      }
+    }
+
+    li {
+      display: inline-block;
+      user-select: none;
+
+      // Removes single-space margin between li elements (hacky)
+      position: relative;
+      margin-right: 4px;
+
+      @media #{$tiny} {
+        display: block;
+        float: none;
+        border-bottom: $nav-link-divider;
+        &:last-of-type {
+          border-bottom: 0;
+        }
+      }
+
+      a {
+        display: block;
+        background-color: inherit;
+        border-radius: $nav-border-radius;
+        color: $nav-link-color;
+        font-size: 16px;  // See TODO
+        padding: 16px;    // See TODO
+        // transition: background-color 0.25s, color 0.25s;
+        white-space: nowrap;
+        &:hover {
+          background-color: $nav-link-hover-background-color;
+          color: $nav-link-hover-color;
+        }
+        &:hover, &:active {
+          text-decoration: none;
+        }
+      }
+    }
+
+    // Remove margins around navigation banner on small headers and grid view
+    body.layout-small-header &,
+    body[class*='action_datasets_'] & {
+      margin-top: 0;
+      margin-bottom: 0;
+      li a {
+        // Smaller size nav bar
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  }
+}
+

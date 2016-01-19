@@ -1,0 +1,80 @@
+
+en:
+  root: /en/
+  search: Search
+  site_user_nav: "{{account_link}}{{admin_link}}{{sign_up_link}}{{sign_in_link}}{{sign_out_link}}"
+  nav_links:
+  - url: /
+    text: Home
+  - url: /browse
+    text: Catalog
+  - url: /videos
+    text: Tutorial
+  - url: /videos
+    text: User’s guide
+  - url: http://dev.socrata.com/
+    text: Developer
+  # header config
+  header_logo: /api/assets/812DA199-CFFE-47FE-90D1-1DB5BDFBE17B?site-title.png
+  social_nav:
+  - url: http://www.youtube.com/socrata
+    icon_class: fa fa-fw fa-facebook
+  - url: http://twitter.com/socrata
+    icon_class: fa fa-fw fa-twitter
+  # footer config
+  footer_logo: /api/assets/080E3987-0988-42D2-B60D-E0AD2D84B5EF?city-seal.png
+  footer_copyright: © {{string.current_year}} City of Pawnee
+  powered_by_socrata: <a href='http://socrata.com/' title='Powered by Socrata'></a>
+  footer_links:
+  - url: /
+    text: Home
+  - url: /browse
+    text: Catalog
+  - url: http://www.socrata.com/terms-of-service/
+    text: Terms of use
+  - url: http://www.socrata.com/privacy/
+    text: Privacy Policy
+  - url: http://www.socrata.com/accessibility/
+    text: Accessibility
+  - url: http://www.socrata.com/contact-us/
+    text: Contact Us
+
+es:
+  root: /es/
+  search: Búsqueda
+  site_user_nav: "{{account_link}}{{admin_link}}{{sign_up_link}}{{sign_in_link}}{{sign_out_link}}"
+  nav_links:
+  - url: /
+    text: Inicio
+  - url: /browse
+    text: Catálogo
+  - url: /videos
+    text: Tutorial
+  - url: /videos
+    text: Manual de Usuario
+  - url: http://dev.socrata.com/
+    text: Developer
+  # header config
+  header_logo: /api/assets/812DA199-CFFE-47FE-90D1-1DB5BDFBE17B?site-title.png
+  social_nav:
+  - url: http://www.youtube.com/socrata
+    icon_class: fa fa-fw fa-facebook
+  - url: http://twitter.com/socrata
+    icon_class: fa fa-fw fa-twitter
+  # footer config
+  footer_logo: /api/assets/080E3987-0988-42D2-B60D-E0AD2D84B5EF?city-seal.png
+  footer_copyright: © {{string.current_year}} City of Pawnee
+  powered_by_socrata: <a href='http://socrata.com/' title='Powered by Socrata'></a>
+  footer_links:
+  - url: /
+    text: Home
+  - url: /browse
+    text: Catálogo
+  - url: http://www.socrata.com/terms-of-service/
+    text: Condiciones de Uso
+  - url: http://www.socrata.com/privacy/
+    text: Política de Privacidad
+  - url: http://www.socrata.com/accessibility/
+    text: Accesibilidad
+  - url: http://www.socrata.com/contact-us/
+    text: Contacto

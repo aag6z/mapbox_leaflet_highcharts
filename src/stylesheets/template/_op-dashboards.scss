@@ -1,0 +1,97 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  GOVSTAT DASHBOARD STYLES
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.govstat-dashboard {
+  .dashboardTitle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    text-align: center;
+    margin: 50px auto;
+    width: 75%;
+    max-width: calc(75% * #{$site-max-width});
+
+    h2 {
+      font-size: 36px;
+      color: #fff;
+    }
+  }
+  .siteContentWrapper {
+    padding: 0;
+  }
+  .dashboardHeader {
+    position: relative;
+    overflow: hidden;
+    @media #{$large} {
+      height: 310px;
+    }
+    @media #{$small} {
+      height: 336px;
+    }
+    @media #{$tiny} {
+      height: 408px;
+    }
+  }
+  .dashboardDescription {
+    max-width: $site-max-width;
+    padding: 0 40px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    p {
+      padding: 30px 0;
+    }
+  }
+  .dashboardImage.full > img {
+    min-width: 100%;
+    margin-top: -20%;
+    @media #{$medium-down} {
+      margin-top: -28px;
+    }
+  }
+  .dashboardImage.blur {
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,0.4);
+    height: 100%;
+    width: 100%;
+  }
+  .dashboardImage.blur img {
+    display: none;
+  }
+  .categoryTitle {
+    max-width: $site-max-width;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 40px;
+    border-bottom: none;
+  }
+  .goalList {
+    text-align: center;
+    max-width: $site-max-width;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    .singleInner {
+      text-align: left;
+    }
+  }
+  .gridFlowLayoutNew {
+    .singleItemWrapper {
+      display: inline-block;
+      float: none;
+    }
+    .categoryItem {
+      padding: 30px 0;
+      margin-bottom: 0px;
+    }
+    .categoryTitle h2 {
+      padding-bottom: 10px;
+    }
+  }
+}

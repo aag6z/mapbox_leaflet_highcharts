@@ -1,0 +1,184 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  VARIABLES (Template settings - RALLY)
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// REQUIRED SITE TEMPLATE VARIABLES
+
+// THEME COLORS
+// Modify according to your client's requirements!
+$background-color:      #f7f7f7;
+$body-text-color:       #5f5f5f;
+$accent-color:          #123135;
+$link-color:            #3b5998;
+
+// From this point onwards, all variables that are commented
+// out will have its own default applied from imported SCSS
+// stylesheets, duplicated here for easy reference.
+// Uncomment the variable in order to override the
+// default setting.
+
+// $link-hover-color:      lighten($link-color, 10%);
+// $link-active-color:     lighten($link-color, 15%);
+// $link-visited-color:    $link-color;
+
+// MEDIA QUERY BREAKPOINTS AND LAYOUT SIZING
+// In most cases, these will not need to change!
+
+// $site-max-width:        1200px;
+// $site-max-width-mobile: 650px;
+
+// $breakpoint-small:      401px;
+// $breakpoint-medium:     768px;
+// $breakpoint-large:      1050px;
+// $breakpoint-xlarge:     1200px;
+
+// LAYOUT POSITIONING
+// In most cases, these will not need to change!
+
+// $site-side-padding:     40px;
+// $tile-margin:           20px;
+// $column-margin:         20px;
+// $border-radius:         0;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  SITE HEADER  /  NAVIGATION
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// $header-image-height:          80px;
+// $header-image-gridview-height: $header-image-height / 2;
+
+// $header-nav-link-color:        $link-color;
+// $header-nav-toggle-color:      $accent-color;
+// $header-nav-toggle-highlight-color: lighten($accent-color, 10%);
+
+// $header-social-link-color:     #7a7a7a;
+// $header-text-color:            #7a7a7a;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  FOOTER
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+$footer-background-color:       $accent-color;
+$footer-border-color:           transparent;
+$footer-text-color:             #ffffff;
+
+// $footer-link-color:             $footer-text-color;
+// $footer-link-hover-color:       $footer-text-color;
+// $footer-link-active-color:      $footer-text-color;
+// $footer-link-visited-color:     $footer-text-color;
+
+$footer-inverse-socrata:        true;
+
+// Set the height of the client-supplied seal or logo
+// $footer-logo-height:            100px;
+
+// Small footer styles
+// $small-footer-background-color: #f7f7f7;
+// $small-footer-text-color:       $footer-text-color;
+// $small-footer-link-color:       $small-footer-text-color;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  NAV BANNER
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// $nav-background-color:            $accent-color;
+
+// $nav-border-radius:               $border-radius;
+
+// $nav-link-color:                  white;
+// $nav-link-hover-color:            $nav-link-color;
+// $nav-link-hover-background-color: lighten($nav-background-color, 5%);
+// $nav-link-divider:                1px solid rgba(0,0,0,0.08);
+
+// $nav-margin-top:                  20px;
+// $nav-margin-bottom:               0;
+
+// $nav-search-border-radius:        3px;
+// $nav-search-button-color:         #e3e3e3;
+// $nav-search-icon-color:           $accent-color;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  SEARCH BAR
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// $search-border-color:      #cacaca;
+// $search-border-radius:     3px;
+// $search-button-color:      #e3e3e3;
+// $search-icon-color:        $body-text-color;
+// $search-divider:           $nav-link-divider;
+
+// Set to false to force search container to
+// also display on grid view or small header pages
+// $search-hide-on-small-header: true;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  WALLPAPER
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// $wallpaper-content-background-color:    #a7a7a7;
+// $wallpaper-content-background-opacity:  0.75;
+// $wallpaper-content-text-color:          white;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  TILE GRID
+
+  Very basic scaffolding for tiled content.
+  When the the presentation of content is intended to
+  appear in tiles, use the .tile-grid class on a
+  DataSlate Repeater component. This ensures that
+  tiles stack up across columns correctly for different
+  media widths, and have the proper margins and spacing
+  within the site container. Set the number of
+  columns as necessary for each media query width.
+
+  // TODO Allow tile grid columns to be set
+  //      on a per-component basis. Currently these
+  //      variables will affect the entire layout.
+
+  // EXPERIMENTAL This may be possible if the component
+  //              uses @include tile-width(x) in its
+  //              definition. Test this to ensure that
+  //              inheritance rules are working.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// $tile-grid-columns-tiny:     1;
+// $tile-grid-columns-small:    2;
+// $tile-grid-columns-med:      4;
+// $tile-grid-columns-large:    4;
+// $tile-grid-height:           165px;
+// $tile-grid-margin:           20px;
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  TILE GRID - CATEGORIES
+
+  Presentation for tiles containing categories.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// $category-tile-text-color:                    white;
+// $category-tile-icon-color:                    $category-tile-text-color;
+// $category-tile-background-color:              $accent-color;
+// $category-tile-description-text-color:        $body-text-color;
+// $category-tile-description-background-color:  white;

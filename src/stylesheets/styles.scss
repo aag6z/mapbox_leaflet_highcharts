@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+// Specify import order! It matters!
+// Baseline styles imported up top; customizations below
+
+// Import resets first
+@import 'vendor/normalize.css';   // Normalize.css for cross-browser consistent styling
+@import 'vendor/main.css';        // HTML5 Boilerplate best practices
+
+// Import settings and variables
+@import 'variables';              // Override template variables with custom ones here
+
+// Import base Socrata styles
+@import 'socrata/media-queries';  // Establishes standard breakpoints for media queries
+@import 'socrata/typography';     // Establishes standard typography styles
+@import 'socrata/base';           // Everything else
+@import 'socrata/tile-grid';      // Tile grid scaffolding
+@import 'socrata/nav-banner';     // Navigation banner component
+@import 'socrata/search';         // Search component
+@import 'socrata/mobile';         // Mobile hack
+
+// Import template stylesheets
+@import 'template/layout';
+@import 'template/header';
+@import 'template/footer';
+@import 'template/components';
+@import 'template/op-dashboards';
+
+// Import custom styles for project
+@import 'custom';
+
+// Import styles for modules & other plugins last
+@import 'socrata/api_foundry.css';

@@ -1,0 +1,16 @@
+en:
+#  company: Rubí Open Data
+#  copyright_string: &copy; Rubí Open Data
+#  search_prompt: Search
+  sign_in: Log In
+  sign_out: Sign Out
+  sign_up: Sign Up
+  site_title: Rally - Open Data Portal
+es:
+#  company: Rubí Open Data
+#  copyright_string: &copy; Rubí Open Data
+#  search_prompt: Búsqueda
+  sign_in: Iniciar Sesión
+  sign_out: Cerrar Sesión
+  sign_up: Inscribirse
+  site_title: Rally - Open Data Portal

@@ -1,0 +1,23 @@
+<footer class="clearfix">
+  <div class="container">
+
+    <div class="site-footer-logo">
+      <a href="/"><img class="footer-logo" src="/api/assets/080E3987-0988-42D2-B60D-E0AD2D84B5EF?city-seal.png"></a>
+    </div>
+
+    <ul class="site-footer-nav">
+        <li><a href="/" rel="nofollow">Home</a></li>
+        <li><a href="/browse" rel="nofollow">Catalog</a></li>
+        <li><a href="http://www.socrata.com/terms-of-service/" rel="nofollow">Terms of use</a></li>
+        <li><a href="http://www.socrata.com/privacy/" rel="nofollow">Privacy Policy</a></li>
+        <li><a href="http://www.socrata.com/accessibility/" rel="nofollow">Accessibility</a></li>
+        <li><a href="http://www.socrata.com/contact-us/" rel="nofollow">Contact Us</a></li>
+    </ul>
+
+    <div class="site-footer-copyright">
+      <div class="copyright">&#169; 2015 City of Pawnee</div>
+      <div class="socrata-logo"><a href='http://socrata.com/' title='Powered by Socrata'></a></div>
+    </div>
+
+  </div>
+</footer>
