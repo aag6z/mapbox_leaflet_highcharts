@@ -12,17 +12,17 @@ data:
   # parse a {dataset.id} reference when the context is a row.
   # See https://socrata.atlassian.net/browse/ONCALL-1288
   wallpaper_dataset:
-    datasetId: xxxx-xxxx
+    datasetId: sw6k-riwq
     type: dataset
   wallpaper_row:
     contextId: wallpaper_dataset
     type: row
   # Category list
   categories:
-    datasetId: xxxx-xxxx
+    datasetId: j99z-4wqj
     type: dataset
   featured:
-    datasetId: xxxx-xxxx
+    datasetId: 2b7u-vcxw
     type: dataset
 content:
   id: content

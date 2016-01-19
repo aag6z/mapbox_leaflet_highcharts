@@ -15,72 +15,6 @@
 
 
 
-// Inject dataset urls onto admin panel
-// https://sites.google.com/a/socrata.com/client-services/2-editing-an-open-data-site/adding-dataslate-dataset-url-s-to-the-admin-panel
-$(function(){
-  if ($("body").hasClass("action_administration_home")) {
-
-    /* Add your customer's dataset urls to this array */
-    var datasetIds = [{
-      id: 'xxxx-xxxx',
-      name: 'Home Page Wallpaper'
-    }, {
-      id: 'xxxx-xxxx',
-      name: 'Category Tiles'
-    }, {
-      id: 'xxxx-xxxx',
-      name: 'Home Page Featured Datasets'
-    }];
-
-
-    var newBox = document.createElement("div");
-    $(newBox).addClass("contentBox withLeftNavigation admin-dataset-links");
-    var header = $("<h2>DataSlate Content Datasets</h2>");
-    var list = document.createElement("ol");
-    for (i in datasetIds) {
-      var li = document.createElement("li");
-      $(li).html("<a href='/d/" + datasetIds[i].id + "' style='font-size:10pt; line-height:1.3em;'>" + datasetIds[i].name + "</a>");
-      $(list).append(li);
-    }
-
-    $(newBox).append(header);
-    $(newBox).append(list);
-    $(newBox).insertAfter(".homeManagement");
-
-    // Hide other admin areas
-    $('.contentBox:not(.admin-dataset-links):not(.homeManagement):not(.layoutConfig)').hide();
-  }
-});
-
-// Add Google Analytics Code Here
-(function($) {
-  $(function() {
-    if ($('body').hasClass('home')) {
-      $('.featured-tiles .tile a').each(function(i, link) {
-        var $link = $(link);
-        var href = $link.attr('href');
-        // regex to test if string starts with /ca, /es, or /en
-        // change this depending on your locales if needed
-        var rx = /^\/((ca|es|en))/;
-        if (rx.test(href)) {
-          // We're in a locale, continue.
-          // Locale paths make up the first 3 characters, e.g. "/en"
-          var locale = href.substring(0, 3);
-          var realhref = href.substring(3, href.length);
-          var domain = "https://" + blist.configuration.env.domain;
-          if (realhref.startsWith(domain)) {
-            // This should be a relative link but someone done fucked up.
-            // Create the new relative link by adding the locale to the path
-            $link.attr('href', locale + realhref.substring(domain.length, realhref.length));
-          } else if (!realhref.startsWith('/')) {
-            // This isn't a relative link, so we just need to replace it without the locale.
-            $link.attr('href', realhref);
-          }
-        };
-      });
-    }
-  });
-})(jQuery);
 // Avoid `console` errors in browsers that lack a console.
 (function() {
     var method;
@@ -564,6 +498,72 @@ $(function(){
 
 }(this));
 
+// Inject dataset urls onto admin panel
+// https://sites.google.com/a/socrata.com/client-services/2-editing-an-open-data-site/adding-dataslate-dataset-url-s-to-the-admin-panel
+$(function(){
+  if ($("body").hasClass("action_administration_home")) {
+
+    /* Add your customer's dataset urls to this array */
+    var datasetIds = [{
+      id: 'sw6k-riwq',
+      name: 'Home Page Wallpaper'
+    }, {
+      id: 'j99z-4wqj',
+      name: 'Category Tiles'
+    }, {
+      id: '2b7u-vcxw',
+      name: 'Home Page Featured Datasets'
+    }];
+
+
+    var newBox = document.createElement("div");
+    $(newBox).addClass("contentBox withLeftNavigation admin-dataset-links");
+    var header = $("<h2>DataSlate Content Datasets</h2>");
+    var list = document.createElement("ol");
+    for (i in datasetIds) {
+      var li = document.createElement("li");
+      $(li).html("<a href='/d/" + datasetIds[i].id + "' style='font-size:10pt; line-height:1.3em;'>" + datasetIds[i].name + "</a>");
+      $(list).append(li);
+    }
+
+    $(newBox).append(header);
+    $(newBox).append(list);
+    $(newBox).insertAfter(".homeManagement");
+
+    // Hide other admin areas
+    $('.contentBox:not(.admin-dataset-links):not(.homeManagement):not(.layoutConfig)').hide();
+  }
+});
+
+// Add Google Analytics Code Here
+(function($) {
+  $(function() {
+    if ($('body').hasClass('home')) {
+      $('.featured-tiles .tile a').each(function(i, link) {
+        var $link = $(link);
+        var href = $link.attr('href');
+        // regex to test if string starts with /ca, /es, or /en
+        // change this depending on your locales if needed
+        var rx = /^\/((ca|es|en))/;
+        if (rx.test(href)) {
+          // We're in a locale, continue.
+          // Locale paths make up the first 3 characters, e.g. "/en"
+          var locale = href.substring(0, 3);
+          var realhref = href.substring(3, href.length);
+          var domain = "https://" + blist.configuration.env.domain;
+          if (realhref.startsWith(domain)) {
+            // This should be a relative link but someone done fucked up.
+            // Create the new relative link by adding the locale to the path
+            $link.attr('href', locale + realhref.substring(domain.length, realhref.length));
+          } else if (!realhref.startsWith('/')) {
+            // This isn't a relative link, so we just need to replace it without the locale.
+            $link.attr('href', realhref);
+          }
+        };
+      });
+    }
+  });
+})(jQuery);
 (function ($) {
   // Optimize mobile scaling
   $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">');
