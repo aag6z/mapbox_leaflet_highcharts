@@ -18,6 +18,7 @@ $header-text-color:            #7a7a7a          !default;
 header, #header {
   padding-top: 14px;
   z-index: 100;
+  background-color: #FFFFFF;
 
   @media #{$tiny} {
     padding-top: 8px;

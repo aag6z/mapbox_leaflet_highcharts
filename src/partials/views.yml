@@ -22,7 +22,7 @@ en:
   - url: http://twitter.com/socrata
     icon_class: fa fa-fw fa-twitter
   # footer config
-  footer_logo: /api/assets/51FD66B2-6402-4862-902C-1B1089D9D22A
+  footer_logo: /api/assets/9E3DBEC9-042D-41F0-8BDE-B7F4485E8C13
   footer_copyright: © {{string.current_year}} City of Pawnee
   powered_by_socrata: <a href='http://socrata.com/' title='Powered by Socrata'></a>
   footer_links:
