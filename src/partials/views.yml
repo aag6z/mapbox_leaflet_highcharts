@@ -15,14 +15,14 @@ en:
   - url: http://dev.socrata.com/
     text: Developer
   # header config
-  header_logo: /api/assets/812DA199-CFFE-47FE-90D1-1DB5BDFBE17B?site-title.png
+  header_logo: /api/assets/3B4147C0-DC77-4317-995D-06562661B395
   social_nav:
   - url: http://www.youtube.com/socrata
     icon_class: fa fa-fw fa-facebook
   - url: http://twitter.com/socrata
     icon_class: fa fa-fw fa-twitter
   # footer config
-  footer_logo: /api/assets/080E3987-0988-42D2-B60D-E0AD2D84B5EF?city-seal.png
+  footer_logo: /api/assets/51FD66B2-6402-4862-902C-1B1089D9D22A
   footer_copyright: © {{string.current_year}} City of Pawnee
   powered_by_socrata: <a href='http://socrata.com/' title='Powered by Socrata'></a>
   footer_links:
