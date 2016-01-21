@@ -15,7 +15,7 @@
     </ul>
 
     <div class="site-footer-copyright">
-      <div class="copyright">&#169; {{string.current_year}} City of Pawnee</div>
+      <div class="copyright">&#169; {{string.current_year}} Commonwealth Secretariat</div>
       <div class="socrata-logo"><a href='http://socrata.com/' title='Powered by Socrata'></a></div>
     </div>
 

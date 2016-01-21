@@ -39,9 +39,10 @@
     <div class="container">
       <ul class="nav-links">
           <li><a href="/">Home</a></li>
-          <li><a href="/browse">Catalog</a></li>
-          <li><a href="/videos">Tutorial</a></li>
-          <li><a href="/videos">User&#8217;s guide</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/browse">Data</a></li>
+          <li><a href="/">Case Studies</a></li>
+          <li><a href="/">Commonwealth Youth Programme</a></li>
           <li><a href="http://dev.socrata.com/">Developer</a></li>
       </ul>
     </div>

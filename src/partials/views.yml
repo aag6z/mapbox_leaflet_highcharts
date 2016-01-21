@@ -6,12 +6,14 @@ en:
   nav_links:
   - url: /
     text: Home
+  - url: /
+    text: About
   - url: /browse
-    text: Catalog
-  - url: /videos
-    text: Tutorial
-  - url: /videos
-    text: User’s guide
+    text: Data
+  - url: /
+    text: Case Studies
+  - url: /
+    text: Commonwealth Youth Programme
   - url: http://dev.socrata.com/
     text: Developer
   # header config
@@ -23,7 +25,7 @@ en:
     icon_class: fa fa-fw fa-twitter
   # footer config
   footer_logo: /api/assets/9E3DBEC9-042D-41F0-8BDE-B7F4485E8C13
-  footer_copyright: © {{string.current_year}} City of Pawnee
+  footer_copyright: © {{string.current_year}} Commonwealth Secretariat
   powered_by_socrata: <a href='http://socrata.com/' title='Powered by Socrata'></a>
   footer_links:
   - url: /
