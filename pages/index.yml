@@ -1,6 +1,6 @@
 name: |
   {
-    "en": "Rally - Open Data Portal"
+    "en": "Youth Development Index - Commonwealth Secretariat"
   }
 path: /
 status: published
@@ -48,7 +48,6 @@ content:
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css" />
         <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
-        <div id="titleSDG">UN Sustainable Development Goals</div> 
         <div id="map"></div>
         <script>
           var geojsonFeature = {"type":"FeatureCollection","features":[
@@ -275,28 +274,6 @@ content:
             var layer = e.target;
             info.update(layer.feature.properties);
           }
-          function resetHTML(){
-              $("#goal1 img").animate({opacity: "1" }, 300);
-              $("#goal1").html('<a href="stat/goals/f2g8-sggf/bjzy-m7nn/p3cv-hdcq"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-01.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a>');
-              $("#goal2 img").animate({opacity: "1" }, 300);
-              $("#goal3 img").animate({opacity: "1" }, 300);
-              $("#goal4 img").animate({opacity: "1" }, 300);
-              $("#goal5 img").animate({opacity: "1" }, 300);
-              $("#goal6 img").animate({opacity: "1" }, 300);
-              $("#goal7 img").animate({opacity: "1" }, 300);
-              $("#goal8 img").animate({opacity: "1" }, 300);
-              $("#goal9 img").animate({opacity: "1" }, 300);
-              $("#goal10 img").animate({opacity: "1" }, 300);
-              $("#goal11 img").animate({opacity: "1" }, 300);
-              $("#goal12 img").animate({opacity: "1" }, 300);
-              $("#goal13 img").animate({opacity: "1" }, 300);
-              $("#goal13").html('<a href="stat/goals/f2g8-sggf/su93-pu6e/wexg-jehi"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-13.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a>');
-              $("#goal14 img").animate({opacity: "1" }, 300);
-              $("#goal15 img").animate({opacity: "1" }, 300);
-              $("#goal16 img").animate({opacity: "1" }, 300);
-              $("#goal17 img").animate({opacity: "1" }, 300);
-          }
-          /* var popup = L.popup(); */
           function update(e){
             var layer = e.target;
             layer.setStyle({
@@ -313,31 +290,8 @@ content:
             }
             info.update(layer.feature.properties);
             info2.update(layer.feature.properties);
-            resetHTML();
             if (layer.feature.properties.name == "Indonesia"){
-              $("#goal1").html('<a href="/stat/goals/vemb-rx44/pqqm-cqyx/79nv-5744"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-01.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a>');
-              $("#goal2 img").animate({opacity: "0.2" }, 500);
-              $("#goal4").html('<a href="/stat/goals/vemb-rx44/pqqm-cqyx/fc3b-asrc"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-04.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a>');
-              $("#goal6 img").animate({opacity: "0.2" }, 500);
-              $("#goal7 img").animate({opacity: "0.2" }, 500);
-              $("#goal8 img").animate({opacity: "0.2" }, 500);
-              $("#goal10 img").animate({opacity: "0.2" }, 500);
-              $("#goal12 img").animate({opacity: "0.2" }, 500);
-              $("#goal14 img").animate({opacity: "0.2" }, 500);
-              $("#goal15 img").animate({opacity: "0.2" }, 500);
-              $("#goal16 img").animate({opacity: "0.2" }, 500);
             } else if (layer.feature.properties.name == "Zambia") {
-              $("#goal3 img").animate({opacity: "0.2" }, 500);
-              $("#goal5 img").animate({opacity: "0.2" }, 500);
-              $("#goal7 img").animate({opacity: "0.2" }, 500);
-              $("#goal9 img").animate({opacity: "0.2" }, 500);
-              $("#goal10 img").animate({opacity: "0.2" }, 500);
-              $("#goal12 img").animate({opacity: "0.2" }, 500);
-              $("#goal13").html('<a href="stat/goals/7nhz-v45p/sta8-3bwr/chv9-y349"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-13.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a>');
-              $("#goal14 img").animate({opacity: "0.2" }, 500);
-              $("#goal15 img").animate({opacity: "0.2" }, 500);
-              $("#goal16 img").animate({opacity: "0.2" }, 500);
-              $("#goal17 img").animate({opacity: "0.2" }, 500);
             }
             /* popup
               .setLatLng(e.latlng)
@@ -356,7 +310,7 @@ content:
           geojson = L.geoJson(geojsonFeature, {
               style: style,
               onEachFeature: onEachFeature
-          }).addTo(map);
+          })
           var info = L.control();
           info.onAdd = function (map) {
             this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -415,26 +369,8 @@ content:
       id: indicators
       html: |
         <div id="parentContainer1">
-          <div class="goals" id="goal1"><a href="stat/goals/f2g8-sggf/bjzy-m7nn/p3cv-hdcq"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-01.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal2"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-02.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal3"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-03.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal4"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-04.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal5"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-05.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal6"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-06.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
+          <img src="http://www.youthdevelopmentindex.org/cms/cms-youth/_images/163045255252042728ee0ec.png">
+          <p>The Commonwealth Youth Development Index (YDI) measures the status of 15-29 year-olds in 170 countries according to five key domains: Education, Health and Well-being, Employment, Civic Participation and Political Participation. YDI scores range from 0-1, 0 being the lowest youth development and 1 the highest.</p>
+          <p>The YDI is not just about presenting data, but also collecting it. One of the key findings of the YDI is the lack of available data on youth development. If you have relevant data please contact us.</p>
         </div>
-        <div id="parentContainer2">
-          <div class="goals" id="goal7"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-07.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal8"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-08.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal9"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-09.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal10"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-10.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal11"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-11.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal12"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-12.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-        </div>
-        <div id="parentContainer1">
-          <div class="goals" id="goal13"><a href="stat/goals/f2g8-sggf/su93-pu6e/wexg-jehi"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-13.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal14"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-14.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal15"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-15.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal16"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-16.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="goal17"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-17.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-          <div class="goals" id="placeholder"><img src="http://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2015/05/E_SDG_Icons-18.jpg?w=669" alt="Good Health and Well-Being" width="147" height="147"></a></div>
-        </div>
+       

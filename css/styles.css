@@ -2450,3 +2450,15 @@ body[class*='action_datasets_'] .site-footer-logo {
 
 #primary_nav_wrap ul li:hover > ul {
   display: block; }
+
+#parentContainer1 img {
+  float: right;
+  margin-right: 40px;
+  width: 200px; }
+
+#parentContainer1 p {
+  float: left;
+  width: 650px;
+  font-size: 15px;
+  line-height: 20px;
+  padding-bottom: 5px; }
