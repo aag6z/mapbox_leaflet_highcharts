@@ -5,3 +5,84 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 // Add your custom styles here!
+
+#map {
+	height: 500px;
+}
+
+#titleSDG {
+	font-family: 'Varela Round', sans-serif !important;
+	color: #3B5998;
+	text-align: center;
+    font-size: 26pt;
+    padding-bottom: 33px;
+}
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.info3 {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+.info2 {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    height: 150px;
+    width: 250px;
+}
+.leaflet-popup-content {
+	text-align: center;
+}
+
+.goals {
+	float: left;
+	margin-right: 20px;
+    margin-left: 19px;
+    margin-bottom: 38px;
+}
+#primary_nav_wrap ul ul
+{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:1px;
+    background:#fff;
+    padding:0;
+}
+
+#primary_nav_wrap ul ul li
+{
+    float:none;
+    width:200px;
+}
+
+#primary_nav_wrap ul ul a
+{
+    line-height:120%;
+    padding:10px 15px;
+}
+
+#primary_nav_wrap ul ul ul
+{
+    top:0;
+    left:100%;
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+    display:block;
+}
