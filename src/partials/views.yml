@@ -24,7 +24,7 @@ en:
   - url: http://twitter.com/socrata
     icon_class: fa fa-fw fa-twitter
   # footer config
-  footer_logo: /api/assets/9E3DBEC9-042D-41F0-8BDE-B7F4485E8C13
+  footer_logo: /api/assets/16E58B0D-D897-4676-8A73-C2878847053F
   footer_copyright: © {{string.current_year}} Commonwealth Secretariat
   powered_by_socrata: <a href='http://socrata.com/' title='Powered by Socrata'></a>
   footer_links:
